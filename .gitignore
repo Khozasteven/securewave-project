@@ -1,0 +1,16 @@
+# Ignore virtual environment directories
+venv/
+backend/venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore the SQLite database file (optional but recommended for production)
+# securewave.db
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment files
+.env

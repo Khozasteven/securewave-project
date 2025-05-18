@@ -1,0 +1,123 @@
+/* Specific styles for the Blog Page */
+
+/* Use the .page-hero styles from contact.css */
+/* .page-hero.blog-hero { ... } */
+
+.blog-list .container {
+  /* Container for the blog list */
+}
+
+/* Reuse the .blog-grid and .blog-post-item styles from your main style.css */
+/* .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.blog-post-item {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+   transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.blog-post-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow);
+}
+
+.blog-post-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+   transition: transform 0.4s ease;
+}
+.blog-post-item:hover .blog-post-image img {
+   transform: scale(1.05);
+}
+
+.blog-post-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post-category {
+  display: inline-block;
+  background-color: var(--medium-bg-color);
+  color: var(--text-color-medium);
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.blog-post-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-family: var(--font-family-sans);
+  line-height: 1.4;
+}
+.blog-post-content h3 a { color: var(--primary-color); }
+.blog-post-content h3 a:hover { color: var(--secondary-color); }
+
+
+.blog-post-content p {
+  font-size: 0.95rem;
+  color: var(--text-color-medium);
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allow paragraph to take up space */
+}
+
+.blog-post-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-color-medium);
+  margin-bottom: 15px;
+}
+
+.read-more {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  align-self: flex-start; /* Align to the left */
+}
+.read-more i { margin-left: 5px; transition: transform var(--transition-speed) ease;}
+.read-more:hover i { transform: translateX(5px); }
+*/
+
+/* Pagination (Optional) */
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+}
+.pagination a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.pagination a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+.pagination a.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+   /* Adjustments from main style.css will apply */
+}

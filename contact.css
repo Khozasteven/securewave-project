@@ -1,0 +1,288 @@
+/* Specific styles for the Contact Page */
+
+/* --- Page Hero (can be reused for other pages) --- */
+.page-hero {
+    /* Using a background image with a strong overlay for a more dynamic feel */
+    background-image: url('img/contact-hero-bg.jpg'); /* IMPORTANT: Replace with your actual background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+  
+    color: var(--text-color-light);
+    padding: 100px 0 80px 0; /* Slightly more balanced padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 45vh; /* Slightly taller for a grander feel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate; /* Ensures z-index context for overlay */
+  }
+  
+  .page-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use a strong, consistent brand color for the overlay */
+    background-color: rgba(var(--primary-rgb), 0.8); /* Example: using rgba with variable for more control */
+    z-index: 1; /* Ensure overlay is above background, below text */
+  }
+  
+  .page-hero .container {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+  }
+  
+  .page-hero h1 {
+    font-size: 3.2rem; /* Slightly larger for more impact */
+    color: #fff;
+    margin-bottom: 20px; /* More space below heading */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Stronger, softer shadow */
+    font-family: var(--font-family-display); /* Use display font if available */
+    letter-spacing: -0.02em; /* Subtle tightening for display fonts */
+  }
+  
+  .page-hero p {
+    font-size: 1.15rem; /* Slightly larger for better readability */
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 750px; /* Slightly wider max-width */
+    margin: 0 auto;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* --- Contact Content Layout --- */
+  .contact-content {
+    padding: var(--section-padding); /* Use global section padding */
+  }
+  
+  .contact-content .container {
+    padding-top: 0; /* Reset, as section-padding handles this */
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; /* Slightly larger gap for breathing room */
+    align-items: flex-start;
+  }
+  
+  /* --- Contact Form --- */
+  .contact-form {
+    background-color: #fff;
+    padding: 45px; /* Slightly more padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-subtle); /* Assuming you define a softer shadow */
+    border: 1px solid var(--border-color);
+  }
+  
+  .contact-form h2 {
+    text-align: left;
+    margin-bottom: 30px; /* More space below heading */
+    font-size: 2rem; /* Ensure heading consistency */
+    color: var(--heading-color); /* Use a consistent heading color variable */
+  }
+  
+  .form-group {
+    margin-bottom: 25px; /* Increased spacing between groups */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px; /* More space below label */
+    font-weight: 600;
+    color: var(--primary-color); /* Keep primary color for emphasis */
+    font-size: 0.95rem;
+    letter-spacing: 0.02em; /* Subtle letter spacing */
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 18px; /* Increased padding for larger input area */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small); /* Slightly smaller border-radius for inputs */
+    font-size: 1.05rem; /* Slightly larger font for readability */
+    font-family: var(--font-family-sans);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Consistent transition */
+    background-color: var(--bg-light); /* Subtle background color for inputs */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(var(--secondary-rgb), 0.2); /* Brighter, softer focus ring */
+    background-color: #fff; /* Clear background on focus */
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px; /* Set a minimum height for textarea */
+  }
+  
+  .contact-form .btn {
+    width: auto;
+    padding: 14px 30px; /* Consistent button padding */
+    font-size: 1.05rem;
+    margin-top: 10px; /* Space from last form group */
+  }
+  
+  .form-note {
+    margin-top: 25px; /* Increased margin */
+    font-size: 0.9rem;
+    color: var(--text-color-medium);
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  /* --- Contact Info --- */
+  .contact-info {
+    padding: 45px; /* Consistent padding with form */
+    border-radius: var(--border-radius);
+    background-color: var(--bg-light); /* Using a light background variable for consistency */
+    box-shadow: var(--box-shadow-subtle); /* Consistent shadow */
+    border: 1px solid var(--border-color);
+  }
+  
+  .contact-info h2 {
+    text-align: left;
+    margin-bottom: 30px; /* Consistent spacing */
+    font-size: 2rem;
+    color: var(--heading-color);
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    margin-bottom: 20px; /* More space between info lines */
+    color: var(--text-color-dark);
+    display: flex;
+    align-items: flex-start; /* Align to top for multi-line addresses */
+    gap: 15px; /* Increased gap for icons */
+    line-height: 1.5;
+  }
+  .contact-info p:last-child {
+    margin-bottom: 0; /* No margin after last paragraph */
+  }
+  .contact-info p i {
+    color: var(--secondary-color);
+    font-size: 1.2rem; /* Slightly larger icons */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    margin-top: 2px; /* Fine-tune icon alignment for text baseline */
+  }
+  .contact-info p a {
+    color: var(--text-color-dark);
+    text-decoration: none; /* Remove default underline */
+    transition: color var(--transition-speed) ease;
+  }
+  .contact-info p a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline; /* Add underline on hover for clear interaction */
+  }
+  
+  
+  /* --- Contact Social --- */
+  .contact-social {
+    margin-top: 40px; /* Increased margin */
+    padding-top: 30px; /* Increased padding */
+    border-top: 1px solid var(--border-color);
+  }
+  .contact-social h3 {
+    font-size: 1.4rem; /* Slightly larger heading */
+    margin-bottom: 20px; /* More space below heading */
+    color: var(--heading-color); /* Consistent heading color */
+  }
+  .contact-social a {
+    font-size: 1.6rem; /* Slightly larger icons */
+    margin-right: 20px; /* More space between icons */
+    color: var(--text-color-medium);
+    transition: color var(--transition-speed) ease;
+  }
+  .contact-social a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+  }
+  
+  
+  /* --- Contact Map --- */
+  .contact-map {
+    margin-top: 40px; /* Consistent margin */
+    padding-top: 30px; /* Consistent padding */
+    border-top: 1px solid var(--border-color);
+  }
+  .contact-map h3 {
+    font-size: 1.4rem; /* Consistent heading size */
+    margin-bottom: 20px; /* Consistent spacing */
+    color: var(--heading-color);
+  }
+  
+  /* Leaflet Map Container Style */
+  #leaflet-map {
+    width: 100%;
+    height: 400px; /* Slightly taller map for better visibility */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow); /* Use a stronger shadow for the map for emphasis */
+    background-color: #e0e0e0; /* Fallback background */
+    overflow: hidden; /* Ensure content stays within border-radius */
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
+    .page-hero {
+        min-height: 35vh;
+        padding: 80px 0 60px 0;
+    }
+    .page-hero h1 {
+        font-size: 2.8rem;
+    }
+    .page-hero p {
+        font-size: 1rem;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 40px; /* Reduced gap when stacked */
+    }
+    .contact-content {
+        padding: var(--section-padding-mobile); /* Assuming a mobile specific padding */
+    }
+    .contact-form, .contact-info {
+        padding: 35px; /* Adjust padding */
+    }
+    .contact-form h2, .contact-info h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .contact-info p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    .contact-social h3, .contact-map h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .page-hero h1 { font-size: 2.2rem; }
+    .page-hero p { font-size: 0.9rem; max-width: 90%; }
+    .contact-form, .contact-info { padding: 25px; }
+    #leaflet-map { height: 280px; } /* Adjust map height on smaller screens */
+    .contact-form .btn {
+        width: 100%; /* Full width button on very small screens */
+    }
+    .form-group input, .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    .contact-info p {
+        gap: 10px;
+    }
+    .contact-social a {
+        font-size: 1.4rem;
+        margin-right: 12px;
+    }
+  }

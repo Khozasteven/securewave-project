@@ -1,0 +1,1259 @@
+/* Custom Properties for consistent styling */
+:root {
+    --sky-primary-color: #5DADE2; /* Sky Blue */
+    --sky-secondary-color: #F39C12; /* Vibrant Orange */
+    --sky-tertiary-color: #34495E; /* Dark Slate Blue */
+    --sky-dark-background: #1C2833; /* Very Dark Blue */
+    --sky-light-background: #F4F6F6; /* Off-White */
+    --sky-text-dark: #333333;
+    --sky-text-light: #FFFFFF;
+
+    --font-family-sans: 'Open Sans', sans-serif;
+    --font-family-serif: 'Playfair Display', serif;
+
+    --section-padding: 80px;
+    --section-padding-sm: 40px;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--sky-text-dark);
+    background-color: var(--sky-light-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: var(--section-padding) 0;
+    overflow: hidden; /* Helps contain animations */
+    position: relative; /* Needed for absolute positioning of elements inside sections */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--sky-tertiary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5.rem;
+    color: var(--sky-text-light);
+}
+
+h2 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-intro {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--sky-tertiary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--sky-primary-color);
+    color: var(--sky-text-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #4AA1D7; /* Slightly darker blue */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--sky-secondary-color);
+    color: var(--sky-text-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: #E08E0B; /* Slightly darker orange */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--sky-primary-color);
+    border: 2px solid var(--sky-primary-color);
+    box-shadow: none;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--sky-primary-color);
+    color: var(--sky-text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* New: Outline Secondary Button */
+.btn-outline-secondary {
+    background-color: transparent;
+    color: var(--sky-secondary-color);
+    border: 2px solid var(--sky-secondary-color);
+    box-shadow: none;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--sky-secondary-color);
+    color: var(--sky-text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Header */
+.landing-page-header {
+    background-color: var(--sky-dark-background);
+    color: var(--sky-text-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-page-header .logo {
+    font-family: var(--font-family-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--sky-primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.landing-page-header .logo:hover {
+    color: var(--sky-secondary-color);
+}
+
+.header-contact {
+    font-size: 1.1rem;
+}
+
+.header-contact i {
+    color: var(--sky-primary-color);
+    margin-right: 8px;
+}
+
+.header-contact a {
+    color: var(--sky-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-contact a:hover {
+    color: var(--sky-primary-color);
+}
+
+/* Hero Section */
+.focused-hero {
+    position: relative;
+    height: 70vh; /* Adjusted height back as WhatsApp box is moved */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sky-text-light);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    display: flex; /* Use flexbox to center content vertically */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Take full height of container */
+}
+
+.hero-content h1 {
+    font-family: var(--font-family-serif);
+    font-size: 4.8rem;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-weight: 300;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* New Dedicated WhatsApp CTA Section Styling */
+.whatsapp-cta-section {
+    background-color: var(--sky-primary-color); /* Use primary color background */
+    color: var(--sky-text-light);
+    padding: var(--section-padding-sm) 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-cta-section h2 {
+    color: var(--sky-text-light); /* White heading */
+    margin-bottom: 15px;
+}
+
+.whatsapp-cta-section .lead {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.whatsapp-options-large {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.btn-whatsapp-message-large,
+.btn-whatsapp-call-large {
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 18px 35px; /* Larger padding for larger buttons */
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp-message-large {
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+}
+
+.btn-whatsapp-message-large:hover {
+    background-color: #1DA851; /* Darker green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-whatsapp-call-large {
+    background-color: #075E54; /* WhatsApp dark green */
+    color: white;
+}
+
+.btn-whatsapp-call-large:hover {
+    background-color: #054C43; /* Even darker green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-whatsapp-message-large i,
+.btn-whatsapp-call-large i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.4rem; /* Larger icon size */
+}
+
+
+/* Client Logos Section */
+.client-logos {
+    background-color: var(--sky-light-background);
+    padding: var(--section-padding-sm) 0;
+    border-bottom: 1px solid #E0E0E0;
+    border-top: 1px solid #E0E0E0;
+}
+
+.client-logos h3 {
+    color: var(--sky-tertiary-color);
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.logo-grid img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%); /* Make logos grayscale */
+}
+
+.logo-grid img:hover {
+    opacity: 1;
+    filter: grayscale(0%); /* Colorize on hover */
+}
+
+/* Search Section Styling - REMOVED */
+/* .search-section {
+    background-color: var(--sky-light-background);
+    padding: var(--section-padding-sm) 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--sky-text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    border-color: var(--sky-primary-color);
+    box-shadow: 0 0 8px rgba(93, 173, 226, 0.4);
+}
+
+.search-bar button {
+    padding: 12px 20px;
+    background-color: var(--sky-primary-color);
+    color: var(--sky-text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #4AA1D7;
+}
+
+#search-results {
+    margin-top: 20px;
+    text-align: left;
+} */
+
+
+/* Key Solutions Section - REDESIGNED */
+.problem-solution-section {
+    background-color: var(--sky-light-background);
+    padding: var(--section-padding) 0;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Reduced gap */
+    margin-top: 60px;
+}
+
+.solution-item {
+    background-color: var(--sky-text-light);
+    padding: 25px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    position: relative;
+    overflow: hidden; /* Hide anything outside the box */
+    border-top: 5px solid var(--sky-primary-color); /* Accent border top */
+}
+
+.solution-item:hover {
+    transform: translateY(-8px); /* Subtle lift */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* More pronounced shadow on hover */
+}
+
+.solution-item .icon-wrapper {
+    background: linear-gradient(45deg, var(--sky-primary-color), #3498DB); /* Gradient icon background */
+    color: var(--sky-text-light);
+    width: 70px; /* Smaller icon */
+    height: 70px; /* Smaller icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem; /* Smaller icon size */
+    margin: 0 auto 20px auto; /* Adjusted margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.solution-item h3 {
+    font-size: 1.6rem; /* Slightly smaller heading */
+    color: var(--sky-tertiary-color);
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.solution-item p {
+    font-size: 0.95rem; /* Slightly smaller paragraph text */
+    color: var(--sky-text-dark);
+    line-height: 1.6; /* Adjusted line height */
+    text-align: left;
+    margin-bottom: 15px; /* Adjusted margin */
+    flex-grow: 1;
+}
+
+.solution-item .sub-services {
+    list-style: disc;
+    text-align: left;
+    margin-top: 10px; /* Reduced margin */
+    margin-left: 20px;
+    color: var(--sky-tertiary-color);
+    font-size: 0.9rem; /* Slightly smaller list items */
+    margin-bottom: 20px; /* Space before buttons */
+    flex-shrink: 0;
+}
+
+.solution-item .sub-services li {
+    margin-bottom: 6px; /* Reduced margin */
+    line-height: 1.4;
+}
+
+/* Container for service action buttons - Positioned at the bottom */
+.service-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Reduced gap */
+    padding: 0 15px; /* Adjusted padding */
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: auto; /* Push buttons to the bottom */
+    position: static; /* Changed from absolute to static */
+    bottom: auto; /* Reset bottom */
+    left: auto; /* Reset left */
+}
+
+/* Styling for ALL buttons within service actions - Smaller and refined */
+.service-actions .btn {
+    flex-grow: 1;
+    max-width: 180px; /* Reduced max width */
+    padding: 8px 12px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
+    height: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* More rounded */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    transition: all 0.3s ease;
+}
+
+/* Specific styles for the Call button */
+.service-actions .call-service-btn {
+    background-color: var(--sky-primary-color);
+    color: var(--sky-text-light);
+    border: 1px solid var(--sky-primary-color); /* Thinner border */
+}
+
+.service-actions .call-service-btn:hover {
+    background-color: #4AA1D7;
+    border-color: #4AA1D7;
+    transform: translateY(-1px); /* Even subtle lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+
+/* Specific styles for the Subscribe button */
+.service-actions .subscribe-service-btn {
+    background-color: var(--sky-light-background);
+    color: var(--sky-tertiary-color);
+    border: 1px solid var(--sky-tertiary-color); /* Thinner border */
+}
+
+.service-actions .subscribe-service-btn:hover {
+    background-color: var(--sky-tertiary-color);
+    color: var(--sky-text-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+
+/* Specific styles for the Get a Quote button */
+.service-actions .get-quote-btn {
+    background-color: transparent;
+    color: var(--sky-secondary-color);
+    border: 1px solid var(--sky-secondary-color); /* Thinner border */
+}
+
+.service-actions .get-quote-btn:hover {
+    background-color: var(--sky-secondary-color);
+    color: var(--sky-text-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+
+
+.service-actions .btn i {
+    margin-right: 6px; /* Reduced space */
+}
+
+
+/* --- SecureAI Special Trend Section --- */
+.secureai-section {
+    /* Stronger, animated background gradient */
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #2C3E50 100%);
+    background-size: 200% 200%; /* Allow movement for animation */
+    animation: background-shift 12s ease infinite alternate; /* Slow, continuous background shift */
+
+    color: var(--sky-text-light);
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate; /* Ensures pseudo-elements are clipped correctly and z-index context */
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.6); /* Deeper inner shadow for depth */
+
+    /* Adding a glowing border effect */
+    border: 1px solid transparent; /* Initial transparent border */
+    animation: border-glow 3s ease-in-out infinite alternate;
+}
+
+/* Keyframe for glowing border */
+@keyframes border-glow {
+    0% { border-color: rgba(93, 173, 226, 0.2); box-shadow: 0 0 15px rgba(93, 173, 226, 0.4); }
+    50% { border-color: rgba(93, 173, 226, 0.6); box-shadow: 0 0 30px rgba(93, 173, 226, 0.8); }
+    100% { border-color: rgba(93, 173, 226, 0.2); box-shadow: 0 0 15px rgba(93, 173, 226, 0.4); }
+}
+
+/* Keyframe for background shift */
+@keyframes background-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Animated noise overlay (stronger and more frequent) */
+.secureai-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle noise texture via data URI SVG */
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+CjxmaWx0ZXIgaWQ9ImEiPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC43NSIgbnVtT2N0YXZlcz0iMSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPgo8L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EiIG9wYWNpdHk9IjAuMDgiLz4KPC9zdmc+') repeat;
+    animation: noise-animation 0.6s steps(2) infinite alternate; /* Faster, more dynamic noise */
+    opacity: 0.1; /* More visible noise */
+    pointer-events: none; /* Allow clicks through */
+    z-index: 1; /* Above background, below content */
+}
+
+@keyframes noise-animation {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); } /* Moves the noise texture */
+}
+
+/* Animated radial pulse (stronger and more distinct) */
+.secureai-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    /* Radial gradient for the pulse effect */
+    background: radial-gradient(circle, rgba(93, 173, 226, 0.4) 0%, rgba(93, 173, 226, 0) 70%);
+    animation: pulse-bg 3.5s ease-out infinite; /* Slightly faster, more intense pulse */
+    transform: translate(-50%, -50%); /* Center the pulse */
+    pointer-events: none;
+    z-index: 0; /* Below content and noise */
+}
+
+@keyframes pulse-bg {
+    0% { width: 0; height: 0; opacity: 0.8; } /* Start with higher opacity */
+    50% { width: 1200px; height: 1200px; opacity: 0.3; } /* Max size of pulse, higher opacity */
+    100% { width: 0; height: 0; opacity: 0; }
+}
+
+
+.secureai-section h2 {
+    color: var(--sky-text-light);
+    margin-bottom: 40px;
+    font-size: 3.8rem;
+    text-shadow: 0 0 25px rgba(93, 173, 226, 1), 0 0 50px rgba(93, 173, 226, 0.6); /* Even stronger glow */
+    position: relative;
+    z-index: 2; /* Above background effects */
+    animation: text-flicker 0.1s infinite alternate; /* Rapid, subtle flicker */
+}
+
+/* Keyframe for text flicker (subtle, fast) */
+@keyframes text-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; } /* Very subtle opacity change */
+}
+
+.secureai-section h2 .highlight-ai {
+    color: var(--sky-primary-color); /* Highlight color */
+    font-family: var(--font-family-serif); /* Different font for emphasis */
+    animation: pulse-glow 1s infinite alternate; /* Even faster pulsating glow */
+}
+
+@keyframes pulse-glow {
+    from { text-shadow: 0 0 15px var(--sky-primary-color), 0 0 30px rgba(93, 173, 226, 0.8); }
+    to { text-shadow: 0 0 35px var(--sky-primary-color), 0 0 50px rgba(93, 173, 226, 1); } /* Stronger end glow */
+}
+
+
+.secureai-section .section-intro {
+    color: rgba(255, 255, 255, 0.98); /* Bright intro text */
+    margin-bottom: 50px;
+    font-size: 1.4rem; /* Larger intro text */
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+}
+
+.secureai-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.secureai-features-grid .feature-item {
+    background-color: rgba(255, 255, 255, 0.25); /* More transparent for dynamic feel */
+    border: 1px solid rgba(255, 255, 255, 0.35); /* Stronger border */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+    backdrop-filter: blur(5px); /* More prominent blur effect for "glassmorphism" */
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secureai-features-grid .feature-item:hover {
+    transform: translateY(-12px) scale(1.04); /* More pronounced hover */
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.secureai-features-grid .feature-item i {
+    font-size: 4.8rem; /* Make icons even bigger */
+    color: var(--sky-primary-color);
+    margin-bottom: 25px;
+    animation: icon-pulse 1.5s infinite alternate; /* Continuous subtle icon pulse */
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+}
+
+@keyframes icon-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); } /* More pronounced pulse */
+}
+
+.secureai-features-grid .feature-item h3 {
+    font-size: 1.7rem;
+    color: var(--sky-text-light);
+    margin-bottom: 15px;
+}
+
+.secureai-features-grid .feature-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.secureai-section .coming-soon-note {
+    font-weight: 900; /* Even bolder */
+    font-size: 1.5rem; /* Even larger */
+    color: var(--sky-secondary-color); /* Accent orange for emphasis */
+    margin-top: 60px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Wider letter spacing */
+    text-shadow: 0 0 20px rgba(243, 156, 18, 1), 0 0 35px rgba(243, 156, 18, 0.6); /* Stronger orange glow */
+    animation: pulse-orange 1.5s infinite alternate; /* Pulsating orange glow */
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes pulse-orange {
+    from { text-shadow: 0 0 15px var(--sky-secondary-color), 0 0 20px rgba(243, 156, 18, 0.8); }
+    to { text-shadow: 0 0 25px var(--sky-secondary-color), 0 0 40px rgba(243, 156, 18, 1); } /* Stronger end glow */
+}
+
+.secureai-cta-form {
+    background-color: rgba(255, 255, 255, 0.3); /* Even more visible form background */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Stronger border */
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); /* Even deeper shadow */
+    backdrop-filter: blur(8px); /* More blur for a prominent futuristic glass effect */
+    position: relative;
+    z-index: 2;
+}
+
+.secureai-cta-form label {
+    display: block;
+    font-size: 1.25rem; /* Larger label */
+    font-weight: 700;
+    color: var(--sky-text-light);
+    margin-bottom: 15px;
+}
+
+.secureai-cta-form input[type="email"] {
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2); /* More opaque input background */
+    color: var(--sky-text-light);
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.secureai-cta-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--sky-primary-color);
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(93, 173, 226, 0.6);
+}
+
+.secureai-cta-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.secureai-cta-form .secureai-btn {
+    width: 100%;
+    padding: 24px; /* Even larger button */
+    font-size: 1.45rem; /* Even larger button text */
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--sky-primary-color) 0%, #3498DB 100%);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(93, 173, 226, 0.8); /* Stronger button glow */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 1px;
+}
+
+/* Shimmer effect for the button (brighter and faster) */
+.secureai-cta-form .secureai-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent); /* Brighter shimmer */
+    transition: all 0.5s;
+    animation: shimmer 2s infinite linear; /* Faster shimmer */
+    z-index: 0;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.secureai-cta-form .secureai-btn:hover {
+    background: linear-gradient(45deg, #3498DB 0%, var(--sky-primary-color) 100%);
+    transform: translateY(-8px) scale(1.05); /* Even more pronounced hover effect */
+    box-shadow: 0 25px 60px rgba(93, 173, 226, 1); /* Much stronger glow on hover */
+}
+
+
+/* Consultation Value Section */
+.consultation-value-section {
+    background-color: var(--sky-light-background);
+}
+
+.consultation-value-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 60px auto;
+    max-width: 800px;
+}
+
+.consultation-value-section ul li {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    color: var(--sky-tertiary-color);
+}
+
+.consultation-value-section ul li i {
+    color: var(--sky-primary-color);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.consultation-value-section ul li strong {
+    color: var(--sky-dark-background);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--sky-dark-background);
+    color: var(--sky-text-light);
+}
+
+.testimonials-section h2 {
+    color: var(--sky-text-light);
+}
+
+.testimonials-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+     transform: translateY(-8px);
+     box-shadow: 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-item .testimonial-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.testimonial-item .testimonial-author {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-item .testimonial-author strong {
+     color: var(--sky-primary-color);
+     font-weight: 700;
+}
+
+
+/* Lead Capture Section (Consultation Form) */
+.lead-capture-section {
+    background-color: var(--sky-light-background);
+    /* Ensure this section is visible */
+    display: block; /* Explicitly set display to block */
+}
+
+.lead-capture-form {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    background-color: var(--sky-text-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sky-tertiary-color);
+    margin-bottom: 10px;
+}
+
+.form-group .required {
+    color: red;
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--sky-text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--sky-primary-color);
+    box-shadow: 0 0 8px rgba(93, 173, 226, 0.4);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+/* Map Section */
+.map-section {
+    background-color: var(--sky-light-background);
+    padding: var(--section-padding) 0; /* Use full section padding */
+}
+
+#leaflet-map {
+    height: 400px; /* Set a fixed height for the map container */
+    width: 100%; /* Make the map responsive */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Space below heading/lead */
+}
+
+
+/* Footer */
+.landing-page-footer {
+    background-color: var(--sky-dark-background);
+    color: var(--sky-text-light);
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+}
+
+.footer-bottom p {
+    margin-bottom: 10px; /* Add space below copyright */
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--sky-primary-color);
+}
+
+.footer-links span {
+    display: inline; /* Keep separator visible */
+    color: rgba(255, 255, 255, 0.5); /* Softer separator color */
+}
+
+
+/* Floating WhatsApp Icon (Right Corner) */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 25px; /* Adjust as needed */
+    right: 25px; /* Position on the right */
+    left: auto; /* Ensure it's not pushed left */
+    z-index: 1002; /* Set a higher z-index than the chatbot icon */
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    width: 60px; /* Set a fixed size */
+    height: 60px; /* Set a fixed size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Icon size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    background-color: #1DA851; /* Slightly darker green on hover */
+}
+
+
+/* Dialogflow Messenger Chatbot Styling (Floating Left Corner) */
+df-messenger {
+    position: fixed; /* Ensure it's fixed for positioning */
+    bottom: 25px; /* Adjust as needed */
+    left: 25px; /* Position on the left */
+    right: auto; /* Ensure it's not pushed right */
+    z-index: 1001; /* Set a lower z-index than the WhatsApp icon */
+
+    /* Optional: Customize the appearance of the chat icon and window */
+    --df-messenger-button-titlebar-color: var(--sky-primary-color); /* Header color */
+    --df-messenger-chat-background-color: var(--sky-light-background); /* Chat background */
+    --df-messenger-font-color: var(--sky-text-dark); /* Text color */
+    --df-messenger-send-icon: var(--sky-primary-color); /* Send button color */
+    --df-messenger-chip-background: var(--sky-primary-color); /* Suggestion chips background */
+    --df-messenger-chip-font-color: var(--sky-text-light); /* Suggestion chips text color */
+    --df-messenger-message-user-background-color: var(--sky-primary-color); /* User message background */
+    --df-messenger-message-bot-background-color: #E0E0E0; /* Bot message background */
+    --df-messenger-message-user-font-color: var(--sky-text-light); /* User message text color */
+    --df-messenger-message-bot-font-color: var(--sky-text-dark); /* Bot message text color */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    h1 { font-size: 3.8rem; }
+    h2 { font-size: 3rem; }
+    .hero-content p { font-size: 1.3rem; }
+    .section-padding { padding: 60px 0; }
+    .whatsapp-options-large { gap: 15px; } /* Reduce gap slightly */
+    .btn-whatsapp-message-large, .btn-whatsapp-call-large { padding: 15px 30px; font-size: 1.1rem; } /* Reduce button size */
+    .btn-whatsapp-message-large i, .btn-whatsapp-call-large i { font-size: 1.3rem; } /* Reduce icon size */
+
+    .secureai-section h2 { font-size: 3rem; }
+    .secureai-section .section-intro { font-size: 1.3rem; }
+    .secureai-features-grid .feature-item i { font-size: 4rem; }
+    .secureai-cta-form { padding: 30px; }
+    .secureai-cta-form label { font-size: 1.1rem; }
+    .secureai-cta-form input[type="email"] { padding: 15px 18px; font-size: 1rem; }
+    .secureai-cta-form .secureai-btn { padding: 20px; font-size: 1.3rem; }
+
+    .solution-item { padding-bottom: 110px; } /* Adjusted padding */
+    .service-actions { bottom: 15px; gap: 8px; padding: 0 15px;}
+    .service-actions .btn { padding: 8px 12px; font-size: 0.9rem; max-width: 180px;}
+    .service-actions .btn i { margin-right: 6px;}
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 1.8rem; }
+    .lead { font-size: 1.1rem; margin-bottom: 30px; }
+    .section-intro { font-size: 1rem; margin-bottom: 40px; }
+    .section-padding { padding: 40px 0; }
+    .focused-hero { height: 60vh; padding: 60px 0;} /* Adjusted height */
+    .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 30px; }
+
+    .whatsapp-options-large { flex-direction: column; gap: 10px; } /* Stack buttons vertically */
+    .btn-whatsapp-message-large, .btn-whatsapp-call-large { padding: 12px 25px; font-size: 1.1rem; } /* Adjusted button size */
+    .btn-whatsapp-message-large i, .btn-whatsapp-call-large i { margin-right: 8px; font-size: 1.2rem; } /* Adjusted icon size */
+
+
+    .client-logos h3 { font-size: 1.4rem; margin-bottom: 20px; }
+    .logo-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 20px; }
+
+
+    .solution-grid { gap: 30px; margin-top: 40px; }
+    .solution-item { padding: 25px; padding-bottom: 120px;} /* Adjusted padding for stacked buttons */
+    .solution-item .icon-wrapper { width: 70px; height: 70px; font-size: 2.5rem; margin-bottom: 20px;}
+    .solution-item h3 { font-size: 1.6rem; }
+    .solution-item p { font-size: 1rem; }
+    .solution-item .sub-services { margin-left: 15px; font-size: 0.9rem; }
+    .solution-item .sub-services li { margin-bottom: 5px; }
+    /* Adjusted for better stacking on smaller screens */
+    .service-actions { bottom: 15px; gap: 8px; padding: 0 15px; flex-direction: column; align-items: stretch;} /* Stack buttons vertically */
+    .service-actions .btn { padding: 8px 12px; font-size: 0.9rem; max-width: none; display: flex !important;} /* Make buttons full width when stacked, ensure visibility */
+    .service-actions .btn i { margin-right: 6px;}
+
+
+    .secureai-section h2 { font-size: 2.5rem; margin-bottom: 30px;}
+    .secureai-section .section-intro { font-size: 1.1rem; margin-bottom: 40px;}
+    .secureai-features-grid { gap: 20px; margin-top: 40px;}
+    .secureai-features-grid .feature-item { padding: 25px;}
+    .secureai-features-grid .feature-item i { font-size: 4rem; margin-bottom: 20px;}
+    .secureai-features-grid .feature-item h3 { font-size: 1.5rem;}
+    .secureai-section .coming-soon-note { font-size: 1.2rem; margin-top: 40px; margin-bottom: 30px;}
+    .secureai-cta-form { padding: 30px; }
+    .secureai-cta-form label { font-size: 1rem; margin-bottom: 10px;}
+    .secureai-cta-form input[type="email"] { padding: 15px 18px; font-size: 1rem; margin-bottom: 20px;}
+    .secureai-cta-form .secureai-btn { padding: 18px; font-size: 1.2rem;}
+    .consultation-value-section ul { margin: 40px auto; max-width: 600px;}
+    .consultation-value-section ul li { font-size: 1rem; margin-bottom: 15px;}
+    .consultation-value-section ul li i { font-size: 1.3rem; margin-right: 10px;}
+    .testimonial-grid { gap: 30px; margin-top: 40px;}
+    .testimonial-item { padding: 25px;}
+    .testimonial-item .testimonial-quote { font-size: 0.95rem; margin-bottom: 15px;}
+    .lead-capture-form { padding: 30px; margin-top: 30px;}
+    .form-group { margin-bottom: 20px;}
+    .form-group label { font-size: 1rem; margin-bottom: 8px;}
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group textarea { padding: 10px 12px; font-size: 0.95rem;}
+    .form-note { font-size: 0.85rem;}
+    .landing-page-footer { padding: 20px 0;}
+    .footer-bottom { flex-direction: column; }
+    .footer-bottom p { margin-bottom: 10px;}
+    .footer-links a { margin: 0 8px;}
+    .whatsapp-icon { width: 50px; height: 50px; font-size: 1.8rem; bottom: 20px; right: 20px;}
+    df-messenger { bottom: 20px; left: 20px; } /* Adjust floating icons for smaller screens */
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    .lead { font-size: 1rem; margin-bottom: 20px; }
+    .section-intro { font-size: 0.95rem; margin-bottom: 30px; }
+    .section-padding { padding: 30px 0; }
+    .focused-hero { height: 50vh; padding: 40px 0;} /* Adjusted height */
+    .hero-content h1 { font-size: 3rem; margin-bottom: 15px; }
+    .hero-content p { font-size: 1rem; margin-bottom: 20px; }
+
+    .whatsapp-options-large { gap: 10px; }
+    .btn-whatsapp-message-large, .btn-whatsapp-call-large { padding: 10px 20px; font-size: 1rem; } /* Adjusted button size */
+    .btn-whatsapp-message-large i, .btn-whatsapp-call-large i { margin-right: 6px; font-size: 1.1rem; } /* Adjusted icon size */
+
+
+    .client-logos h3 { font-size: 1.2rem; margin-bottom: 15px; }
+    .logo-grid { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 15px; }
+
+
+    .solution-grid { gap: 20px; margin-top: 30px; }
+    .solution-item { padding: 20px; padding-bottom: 110px;} /* Adjusted padding for stacked buttons */
+    .solution-item .icon-wrapper { width: 60px; height: 60px; font-size: 2rem; margin-bottom: 15px;}
+    .solution-item h3 { font-size: 1.4rem; }
+    .solution-item p { font-size: 0.95rem; }
+    .solution-item .sub-services { margin-left: 10px; font-size: 0.85rem; }
+    .solution-item .sub-services li { margin-bottom: 4px; }
+    /* Adjusted for better stacking on smallest screens */
+    .service-actions { bottom: 10px; gap: 6px; padding: 0 10px; flex-direction: column; align-items: stretch;} /* Stack buttons vertically */
+    .service-actions .btn { padding: 6px 10px; font-size: 0.85rem; max-width: none; display: flex !important;} /* Make buttons full width when stacked, ensure visibility */
+    .service-actions .btn i { margin-right: 4px;}
+
+
+    .secureai-section h2 { font-size: 2rem; margin-bottom: 20px;}
+    .secureai-section .section-intro { font-size: 1rem; margin-bottom: 30px;}
+    .secureai-features-grid { gap: 15px; margin-top: 30px;}
+    .secureai-features-grid .feature-item { padding: 20px;}
+    .secureai-features-grid .feature-item i { font-size: 3rem; margin-bottom: 15px;}
+    .secureai-features-grid .feature-item h3 { font-size: 1.3rem;}
+    .secureai-section .coming-soon-note { font-size: 1rem; margin-top: 30px; margin-bottom: 20px;}
+    .secureai-cta-form { padding: 20px; margin-top: 20px;}
+    .secureai-cta-form label { font-size: 0.9rem; margin-bottom: 8px;}
+    .secureai-cta-form input[type="email"] { padding: 10px 12px; font-size: 0.9rem; margin-bottom: 15px;}
+    .secureai-cta-form .secureai-btn { padding: 15px; font-size: 1.1rem;}
+    .consultation-value-section ul { margin: 30px auto; max-width: 500px;}
+    .consultation-value-section ul li { font-size: 0.95rem; margin-bottom: 10px;}
+    .consultation-value-section ul li i { font-size: 1.2rem; margin-right: 8px;}
+    .testimonial-grid { gap: 20px; margin-top: 30px;}
+    .testimonial-item { padding: 20px;}
+    .testimonial-item .testimonial-quote { font-size: 0.95rem; margin-bottom: 10px;}
+    .lead-capture-form { padding: 20px; margin-top: 20px;}
+    .form-group { margin-bottom: 15px;}
+    .form-group label { font-size: 0.9rem; margin-bottom: 6px;}
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group textarea { padding: 8px 10px; font-size: 0.9rem;}
+    .form-note { font-size: 0.8rem;}
+    .whatsapp-icon { width: 45px; height: 45px; font-size: 1.6rem; bottom: 15px; right: 15px;}
+    df-messenger { bottom: 15px; left: 15px; } /* Adjust floating icons for smallest screens */
+}

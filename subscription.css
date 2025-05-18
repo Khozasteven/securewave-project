@@ -1,0 +1,197 @@
+/* Specific styles for the Subscription/Packages Page */
+
+/* Use the .page-hero styles from contact.css */
+/* .page-hero.subscription-hero { ... } */
+
+.pricing-plans .section-intro {
+  margin-bottom: 3em; /* More space below intro text */
+}
+
+/* The pricing grid styles can largely reuse the .promotion-grid and .promotion-item styles from style.css */
+/*
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px; // Already in main style.css
+}
+
+.promotion-item { // Already in main style.css
+  background-color: #fff;
+  padding: 35px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+.promotion-item:hover { // Already in main style.css
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow);
+}
+
+.card-icon { // Already in main style.css
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.promotion-item h3 { // Already in main style.css
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-family: var(--font-family-sans);
+  font-weight: 700;
+}
+
+.price { // Already in main style.css
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: var(--font-family-sans);
+}
+.price .price-term { // Already in main style.css
+  font-size: 0.7rem;
+  color: var(--text-color-medium);
+  font-weight: 400;
+  display: block;
+  margin-top: -5px;
+}
+
+.promotion-item ul { // Already in main style.css
+  text-align: left;
+  margin: 25px 0;
+  padding-left: 10px;
+  min-height: 160px;
+}
+
+.promotion-item ul li { // Already in main style.css
+  margin-bottom: 12px;
+  color: var(--text-color-medium);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.promotion-item ul li i { // Already in main style.css
+  color: #2ecc71; // Using a green for checkmarks
+  font-size: 0.9rem;
+}
+
+.promotion-item .btn { // Already in main style.css
+   width: 80%;
+   margin-top: auto;
+}
+
+// Highlighted Plan - Already in main style.css
+.promotion-item.highlighted {
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.03);
+}
+.promotion-item.highlighted:hover {
+  transform: scale(1.03) translateY(-8px);
+}
+
+.highlight-badge { // Already in main style.css
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 40px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+*/
+
+.custom-package-cta {
+  margin-top: 60px;
+  border-top: 1px solid var(--border-color);
+   padding-top: 40px;
+}
+.custom-package-cta h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+.custom-package-cta p {
+  font-size: 1.1rem;
+  color: var(--text-color-medium);
+  margin-bottom: 30px;
+}
+
+
+/* FAQ Section Styles */
+.faq-section {
+  background-color: var(--medium-bg-color);
+}
+.faq-section h2 {
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition-speed) ease;
+}
+.faq-item:hover {
+   box-shadow: var(--box-shadow-light);
+}
+
+
+.faq-question {
+  padding: 20px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-speed) ease;
+}
+.faq-question i {
+   transition: transform var(--transition-speed) ease;
+}
+.faq-item.active .faq-question {
+  background-color: var(--light-bg-color);
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+
+.faq-answer {
+  padding: 0 30px 20px 30px;
+  font-size: 1rem;
+  color: var(--text-color-dark);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
+}
+.faq-item.active .faq-answer {
+  max-height: 300px; /* Adjust based on expected content size */
+  padding-top: 15px;
+  transition: max-height var(--transition-speed) ease-in, padding var(--transition-speed) ease-in;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .faq-question {
+      padding: 15px 20px;
+      font-size: 1rem;
+  }
+   .faq-answer {
+      padding: 0 20px 15px 20px;
+      font-size: 0.95rem;
+  }
+}

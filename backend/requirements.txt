@@ -2,7 +2,6 @@ acme==2.9.0
 attrs==23.2.0
 Automat==22.10.0
 Babel==2.10.3
-bcrypt==3.2.2
 blinker==1.7.0
 certbot==2.9.0
 certbot-nginx==2.9.0
@@ -44,7 +43,6 @@ PyGObject==3.48.2
 PyHamcrest==2.1.0
 PyICU==2.12
 PyJWT==2.7.0
-pyOpenSSL==23.2.0
 pyparsing==3.1.1
 pyRFC3339==1.1
 pyrsistent==0.20.0

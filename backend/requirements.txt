@@ -25,7 +25,7 @@ idna==3.6
 incremental==22.10.0
 Jinja2==3.1.2
 josepy==1.14.0
-jsonpatch==1.32
+    jsonpatch==1.32
 jsonpointer==2.0
 jsonschema==4.10.3
 launchpadlib==1.11.0
@@ -68,22 +68,6 @@ urllib3==2.0.7
 wadllib==1.3.6
 wheel==0.42.0
 zope.interface==6.1
-After you've pasted the content:
-
-Scroll down on the GitHub page.
-Add a short commit message (e.g., "Corrected requirements.txt content").
-Click the green "Commit changes" button.
-Let me know once you've successfully done that!
-Thank you for clarifying! Yes, you are exactly in the right place.
-
-When you're in the GitHub web editor, your goal is to make sure the file ends up with only the correct content (the full list of packages, without cloud-init).
-
-So, yes:
-
-Delete ALL the content that is currently in the editor for backend/requirements.txt.
-Then, paste the complete, correct list of packages that I've provided into that now-empty editor.
-Here's the correct list again, just to be sure:
-
 acme==2.9.0
 attrs==23.2.0
 Automat==22.10.0
@@ -111,7 +95,7 @@ idna==3.6
 incremental==22.10.0
 Jinja2==3.1.2
 josepy==1.14.0
-jsonpatch==1.32
+    jsonpatch==1.32
 jsonpointer==2.0
 jsonschema==4.10.3
 launchpadlib==1.11.0

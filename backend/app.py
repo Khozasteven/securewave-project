@@ -27,6 +27,15 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Disable tracking modifica
 
 db = SQLAlchemy(app) # Initialize SQLAlchemy
 
+# --- TEMPORARY CODE TO CREATE DATABASE TABLES ---
+# IMPORTANT: This block is for initial database setup on Render's free tier.
+# After the first successful deployment where you see "Database tables created!" in Render logs,
+# IMMEDIATELY REMOVE THIS BLOCK from your local app.py, commit, and push again.
+with app.app_context():
+    db.create_all()
+    print("Database tables created!")
+# --- END OF TEMPORARY CODE ---
+
 # --- Define Database Models ---
 # These Python classes represent your database tables.
 class Consultation(db.Model):

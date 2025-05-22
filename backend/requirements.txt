@@ -1,6 +1,6 @@
 Flask
-flask-cors
+Flask-CORS
+Flask-SQLAlchemy
 gunicorn
-psycopg2-binary  # This is the Python adapter for PostgreSQL
-Flask-SQLAlchemy # This is a Flask extension for SQLAlchemy ORM
-python-dotenv    # Good for managing environment variables locally
+python-dotenv
+PyMySQL

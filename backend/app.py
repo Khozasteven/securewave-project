@@ -10,22 +10,30 @@ app = Flask(__name__)
 
 # Enable CORS for all origins. In a production environment, you should restrict this
 # to only the frontend origin(s) for security.
-# For example: CORS(app, resources={r"/api/*": {"origins": "https://your-frontend-domain.com"}})
 CORS(app)
 
 # --- Logging Configuration ---
 # Configure logging to output informational messages and errors.
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# --- Database Configuration for PostgreSQL ---
-# Render will provide DATABASE_URL in production.
-# Locally, you'll need to set up a PostgreSQL DB or use a .env file.
-# The `replace` is a common workaround for older psycopg2 versions that expect 'postgres://'
-# while newer ones prefer 'postgresql://'. Render typically provides 'postgresql://'.
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://user:password@localhost:5432/securewave_db').replace("postgres://", "postgresql://", 1)
+# --- Database Configuration for MySQL ---
+# PythonAnywhere will provide DATABASE_URL in production.
+# Locally, you'll need to set up a MySQL DB or use a .env file.
+# We're using 'mysql+pymysql' as the driver.
+# The default here is a placeholder for local development if you set up MySQL locally.
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'mysql+pymysql://user:Wu3iq!3Q7v9RJvR@localhost/your_local_mysql_db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Disable tracking modifications overhead
 
 db = SQLAlchemy(app) # Initialize SQLAlchemy
+
+# --- DATABASE TABLE CREATION (For Reliability on PythonAnywhere) ---
+# This ensures tables are created/checked every time the app starts.
+# It's idempotent, so it won't re-create if they already exist.
+with app.app_context():
+    db.create_all()
+    print("Database tables created/checked on app startup!")
+# --- END OF DATABASE TABLE CREATION ---
+
 
 # --- Define Database Models ---
 # These Python classes represent your database tables.
@@ -139,7 +147,6 @@ def handle_secureai_subscribe():
     except Exception as e:
         db.session.rollback()
         # Check for unique constraint violation (duplicate email)
-        # The error message can vary slightly between database drivers, so a general check is used.
         if 'unique constraint' in str(e).lower() or 'duplicate key value' in str(e).lower():
             logging.warning(f"Duplicate subscription attempt for email: {email}")
             return jsonify({"message": "You are already subscribed with this email address."}), 409 # 409 Conflict
@@ -274,14 +281,9 @@ def webhook():
 # --- Root Route (Optional) ---
 @app.route('/')
 def index():
-    return "SecureWave Backend is running!" # Updated message
+    return "SecureWave Backend is running!"
 
 # --- Run the Flask App (for local development only, Gunicorn will run in production) ---
-# This block is mainly for local testing with `python app.py`
-# For production, Gunicorn will run the app.
 if __name__ == '__main__':
     print("Running Flask app in development mode directly...")
-    # For local PostgreSQL testing, you would typically run 'flask db upgrade'
-    # or 'with app.app_context(): db.create_all()' once to create tables.
-    # The temporary db.create_all() above handles the Render initial setup.
-    # app.run(host='0.0.0.0', port=5000, debug=True) # This line should be removed or commented out for Render
+    # app.run(host='0.0.0.0', port=5000, debug=True) # This line should remain commented out for production

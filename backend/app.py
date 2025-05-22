@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # Enable CORS for all origins. In a production environment, you should restrict this
 # to only the frontend origin(s) for security.
-# For example: CORS(app, resources={r"/api/*": {"origins": "[https://your-frontend-domain.com](https://your-frontend-domain.com)"}})
+# For example: CORS(app, resources={r"/api/*": {"origins": "https://your-frontend-domain.com"}})
 CORS(app)
 
 # --- Logging Configuration ---
@@ -26,16 +26,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgres
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Disable tracking modifications overhead
 
 db = SQLAlchemy(app) # Initialize SQLAlchemy
-
-# --- TEMPORARY CODE TO CREATE DATABASE TABLES ---
-# IMPORTANT: This block is for initial database setup on Render's free tier.
-# After the first successful deployment where you see "Database tables created!" in Render logs,
-# IMMEDIATELY REMOVE THIS BLOCK from your local app.py, commit, and push again.
-with app.app_context():
-    db.create_all()
-    print("Database tables created!")
-# --- END OF TEMPORARY CODE ---
-
 
 # --- Define Database Models ---
 # These Python classes represent your database tables.
